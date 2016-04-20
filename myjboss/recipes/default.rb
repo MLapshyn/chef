@@ -44,7 +44,6 @@ end
 execute 'extract_testweb_zipfile' do
   command "unzip testweb.zip -d #{ node['jboss']['deploy_path'] }"
   cwd node['jboss']['target_dir']
-  not_if { File.directory?( "#{ node['jboss']['deploy_path']}/testweb" ) }
 end
 #Init JBoss
 template "/etc/init.d/jboss" do
