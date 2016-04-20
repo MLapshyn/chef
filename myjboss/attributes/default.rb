@@ -6,7 +6,7 @@ default['jboss']['jboss_home'] = "#{ node['jboss']['target_dir'] }/jboss-5.1.0.G
 default['jboss']['deploy_path'] = "#{ node['jboss']['jboss_home'] }/server/default/deploy"
 default['jboss']['jboss_user'] = "jboss"
 default['jboss']['jboss_group'] = "jboss"
-default['jboss'][':bind_address']="192.168.56.22"
+default['jboss']['bind_address']="192.168.56.22"
 
 
 
