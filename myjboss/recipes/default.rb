@@ -2,10 +2,6 @@
 # Cookbook Name:: myjboss
 # Recipe:: default
 #
-# Copyright 2016, Maksim_Lapshyn
-#
-# All rights reserved - Do Not Redistribute
-#
 
 include_recipe 'java'
 #Yum
