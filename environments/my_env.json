@@ -1,0 +1,11 @@
+{
+  "name": "my_env",
+    "default_attributes": {
+      "jboss": {
+        "app_url": "http://www.cumulogic.com/download/Apps/hudson.zip",
+        "app_name": "hudson",
+        "app_zip": "hudson.zip"
+    }
+  }
+}
+
