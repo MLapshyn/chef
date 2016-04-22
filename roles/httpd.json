@@ -1,0 +1,6 @@
+{
+  "name": "httpd",
+  "run_list": [
+    "recipe[web_cookbook]"
+  ]
+}

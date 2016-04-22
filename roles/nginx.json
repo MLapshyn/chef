@@ -1,0 +1,6 @@
+{
+  "name": "nginx",
+  "run_list": [
+    "recipe[web_cookbook]"
+  ]
+}
