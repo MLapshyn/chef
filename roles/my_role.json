@@ -1,0 +1,6 @@
+{
+  "name": "my_role",
+  "run_list": [
+    "recipe[my_cookbook]"
+  ]
+}

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>cur_date_time=$(date)
+sudo bash -c &quot;cat &lt;&lt; EOF &gt; /opt/apache-tomcat-7.0.68/webapps/deploy-info.txt
+deployment_time = $cur_date_time
+deployment_job_name = $JOB_NAME
+deployment_job_number = $BUILD_NUMBER
+EOF&quot;
+
+sudo bash -c &quot;if [ -e /opt/apache-tomcat-7.0.68/webapps/mnt-lab.war ]
+then
+rm -fr /opt/apache-tomcat-7.0.68/webapps/mnt-lab.war
+sleep 5
+fi&quot;
+
+sudo wget -P /opt/apache-tomcat-7.0.68/webapps/ http://localhost:8080/jenkins/job/build/$BUILD_NUMBER/artifact/target/mnt-lab.war
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

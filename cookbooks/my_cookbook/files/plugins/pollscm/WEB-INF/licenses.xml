@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<l:dependencies xmlns:l='licenses' groupId='org.jenkins-ci.plugins' artifactId='pollscm' version='1.2'><l:dependency name='Jenkins Poll SCM plugin' groupId='org.jenkins-ci.plugins' artifactId='pollscm' version='1.2' url='https://wiki.jenkins-ci.org/display/JENKINS/PollSCM+Plugin'><l:description>This plugin adds a Poll SCM button on your jobs that allow you to poll a project on-demand</l:description><l:license name='MIT license' url='LICENSE.txt'/></l:dependency></l:dependencies>

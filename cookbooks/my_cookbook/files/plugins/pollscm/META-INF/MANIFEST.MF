@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: vlatombe
+Build-Jdk: 1.6.0_26
+Extension-Name: pollscm
+Specification-Title: This plugin adds a Poll SCM button on your jobs t
+ hat allow you to poll a project on-demand
+Implementation-Title: pollscm
+Implementation-Version: 1.2
+Group-Id: org.jenkins-ci.plugins
+Short-Name: pollscm
+Long-Name: Jenkins Poll SCM plugin
+Url: https://wiki.jenkins-ci.org/display/JENKINS/PollSCM+Plugin
+Plugin-Version: 1.2
+Hudson-Version: 1.424
+Jenkins-Version: 1.424
+Plugin-Developers: Vincent Latombe:vlatombe:vincent.latombe@gmail.com
+
