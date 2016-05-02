@@ -8,9 +8,12 @@
 #
 
 if node.role?('nginx')
-   include_recipe 'web_nginx'
-
-elsif node.role?('httpd')
-   include_recipe 'web_apache'
-
+     web 'Installing nginx' do
+   provider 'web_nginx'
+   action:install
+end
+elsif node.role?('apache')
+     web 'Installing apache' do
+   provider 'web_apache'
+   action:install
 end
