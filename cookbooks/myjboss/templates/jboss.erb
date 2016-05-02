@@ -1,0 +1,47 @@
+#! /bin/sh
+# chkconfig: - 95 15
+### BEGIN INIT INFO
+# Required-Start: $local_fs $remote_fs $network $named
+# Required-Stop: $local_fs $remote_fs $network
+### END INIT INFO
+
+start(){
+        echo "Starting jboss.."
+        su -l <%= @user %> -c 'sh <%= @jboss_home %>/bin/run.sh -b 192.168.56.22 -Djboss.server.log.dir=<%= @jboss_home %>/logs > <%= @jboss_home %>/logs/jboss_startup.log 2> <%= @jboss_home %>/logs/jboss_startup_errors.log &'
+}
+
+stop(){
+        echo "Stopping jboss.."
+        su -l <%= @user %> -c 'sh <%= @jboss_home %>/bin/shutdown.sh -s 192.168.56.22 -u admin -p admin -S > <%= @jboss_home %>/logs/jboss_shutdown.log 2> <%= @jboss_home %>/logs/jboss_shutdown_errors.log &' 
+}
+
+restart(){
+        stop
+# give stuff some time to stop before we restart
+        sleep 60
+# protect against any services that can't stop before we restart (warning this kills all Java instances running as 'jboss' user)
+        su -l root -c 'killall java'
+# if the 'su -l ...' command fails try:
+        #   sudo -u jboss killall java
+        start
+}
+
+
+
+
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart)
+        restart
+        ;;
+  *)
+        echo "Usage: jboss {start|stop|restart}"
+        exit 1
+esac
+
+exit 0

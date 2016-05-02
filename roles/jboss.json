@@ -1,0 +1,7 @@
+{
+  "name": "jboss",
+  "run_list": [
+    "recipe[myjboss]",
+    "recipe[java]"
+  ]
+}
